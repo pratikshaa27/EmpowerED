@@ -1,0 +1,926 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <script src="https://kit.fontawesome.com/0fe3bd6e70.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/0a3f765fcd.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>EmpowerED</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .card:hover {
+      background-color: rgb(176, 251, 176);
+    }
+
+    .card-img-top {
+      display: flex;
+      align-items: center;
+      /* Vertical centering */
+      justify-content: center;
+      /* Horizontal centering */
+    }
+
+    .fa-solid {
+      font-size: 3em;
+      /* Adjust font size to fit within card area */
+    }
+
+
+    @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+    :root {
+      --d: 700ms;
+      --e: cubic-bezier(0.19, 1, 0.22, 1);
+      --font-sans: "Rubik", sans-serif;
+      --font-serif: "Cardo", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+    }
+
+    .dd_heading {
+      text-align: center;
+      font-family: roboto thin;
+    }
+
+    .page-content {
+      display: grid;
+      grid-gap: 1rem;
+      padding: 1rem;
+      max-width: auto;
+      margin: 0 auto;
+      font-family: var(--font-sans);
+    }
+
+    @media (min-width: 600px) {
+      .page-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 800px) {
+      .page-content {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .d_card {
+      position: relative;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: end;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      color: whitesmoke;
+      background-color: whitesmoke;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+    }
+
+    @media (min-width: 600px) {
+      .d_card {
+        height: 350px;
+      }
+    }
+
+    .d_card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-size: cover;
+      background-position: 0 0;
+      -webkit-transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
+      transition: -webkit-transform calc(var(--d) * 1.5) var(--e);
+      transition: transform calc(var(--d) * 1.5) var(--e);
+      transition: transform calc(var(--d) * 1.5) var(--e),
+        -webkit-transform calc(var(--d) * 1.5) var(--e);
+      pointer-events: none;
+    }
+
+    .d_card:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      pointer-events: none;
+      background-image: -webkit-gradient(linear,
+          left top,
+          left bottom,
+          from(rgba(0, 0, 0, 0)),
+          color-stop(11.7%, rgba(0, 0, 0, 0.009)),
+          color-stop(22.1%, rgba(0, 0, 0, 0.034)),
+          color-stop(31.2%, rgba(0, 0, 0, 0.072)),
+          color-stop(39.4%, rgba(0, 0, 0, 0.123)),
+          color-stop(46.6%, rgba(0, 0, 0, 0.182)),
+          color-stop(53.1%, rgba(0, 0, 0, 0.249)),
+          color-stop(58.9%, rgba(0, 0, 0, 0.32)),
+          color-stop(64.3%, rgba(0, 0, 0, 0.394)),
+          color-stop(69.3%, rgba(0, 0, 0, 0.468)),
+          color-stop(74.1%, rgba(0, 0, 0, 0.54)),
+          color-stop(78.8%, rgba(0, 0, 0, 0.607)),
+          color-stop(83.6%, rgba(0, 0, 0, 0.668)),
+          color-stop(88.7%, rgba(0, 0, 0, 0.721)),
+          color-stop(94.1%, rgba(0, 0, 0, 0.762)),
+          to(rgba(0, 0, 0, 0.79)));
+      background-image: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.009) 11.7%,
+          rgba(0, 0, 0, 0.034) 22.1%,
+          rgba(0, 0, 0, 0.072) 31.2%,
+          rgba(0, 0, 0, 0.123) 39.4%,
+          rgba(0, 0, 0, 0.182) 46.6%,
+          rgba(0, 0, 0, 0.249) 53.1%,
+          rgba(0, 0, 0, 0.32) 58.9%,
+          rgba(0, 0, 0, 0.394) 64.3%,
+          rgba(0, 0, 0, 0.468) 69.3%,
+          rgba(0, 0, 0, 0.54) 74.1%,
+          rgba(0, 0, 0, 0.607) 78.8%,
+          rgba(0, 0, 0, 0.668) 83.6%,
+          rgba(0, 0, 0, 0.721) 88.7%,
+          rgba(0, 0, 0, 0.762) 94.1%,
+          rgba(0, 0, 0, 0.79) 100%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: -webkit-transform calc(var(--d) * 2) var(--e);
+      transition: -webkit-transform calc(var(--d) * 2) var(--e);
+      transition: transform calc(var(--d) * 2) var(--e);
+      transition: transform calc(var(--d) * 2) var(--e),
+        -webkit-transform calc(var(--d) * 2) var(--e);
+    }
+
+    .d_card:nth-child(1):before {
+      background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    }
+
+    .d_card:nth-child(2):before {
+      background-image: url(https://images.unsplash.com/photo-1581014023865-4209099f2b71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80);
+    }
+
+    .d_card:nth-child(3):before {
+      background-image: url(https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    }
+
+    .d_card:nth-child(4):before {
+      background-image: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    }
+
+    .content {
+      position: relative;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-align: center;
+      align-items: center;
+      width: 100%;
+      padding: 1rem;
+      -webkit-transition: -webkit-transform var(--d) var(--e);
+      transition: -webkit-transform var(--d) var(--e);
+      transition: transform var(--d) var(--e);
+      transition: transform var(--d) var(--e), -webkit-transform var(--d) var(--e);
+      z-index: 1;
+    }
+
+    .content>*+* {
+      margin-top: 1rem;
+    }
+
+    .heading {
+      font-size: 1.3rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .data-content {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    @media (hover: hover) and (min-width: 600px) {
+      .d_card:after {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      .content {
+        -webkit-transform: translateY(calc(100% - 4.5rem));
+        transform: translateY(calc(100% - 4.5rem));
+      }
+
+      .content>*:not(.heading) {
+        opacity: 0;
+        -webkit-transform: translateY(1rem);
+        transform: translateY(1rem);
+        -webkit-transition: opacity var(--d) var(--e),
+          -webkit-transform var(--d) var(--e);
+        transition: opacity var(--d) var(--e), -webkit-transform var(--d) var(--e);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e),
+          -webkit-transform var(--d) var(--e);
+      }
+
+      .d_card:hover,
+      .d_card:focus-within {
+        -webkit-box-align: center;
+        align-items: center;
+      }
+
+      .d_card:hover:before,
+      .d_card:focus-within:before {
+        -webkit-transform: translateY(-4%);
+        transform: translateY(-4%);
+      }
+
+      .d_card:hover:after,
+      .d_card:focus-within:after {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+      .d_card:hover .content,
+      .d_card:focus-within .content {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      .d_card:hover .content>*:not(.heading),
+      .d_card:focus-within .content>*:not(.heading) {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transition-delay: calc(var(--d) / 8);
+        transition-delay: calc(var(--d) / 8);
+      }
+
+      .d_card:focus-within:before,
+      .d_card:focus-within:after,
+      .d_card:focus-within .content,
+      .d_card:focus-within .content>*:not(.heading) {
+        -webkit-transition-duration: 0s;
+        transition-duration: 0s;
+      }
+    }
+  </style>
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
+  <link rel="stylesheet" href="/stylesheets/magnific-popup.css">
+  <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+  <link rel="stylesheet" href="/stylesheets/nice-select.css">
+  <link rel="stylesheet" href="/stylesheets/flaticon.css">
+  <link rel="stylesheet" href="/stylesheets/gijgo.css">
+  <link rel="stylesheet" href="/stylesheets/animate.css">
+  <link rel="stylesheet" href="/stylesheets/slicknav.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/responsive.css">
+  <style>
+    #rs {
+      padding-left: 30%;
+      width: 300%;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+
+  <!-- header-start -->
+  <header style="width: -webkit-fill-available;">
+    <div class="header-area h-9 ">
+      <div class="header-top_area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 col-lg-8">
+              <div class="short_contact_list">
+                <ul>
+                  <li><a href="#"> <i class="fa fa-phone"></i>+91 9999111199</a></li>
+                  <li><a href="#"> <i class="fa fa-envelope"></i>abcmail@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-6 col-lg-4">
+              <div class="social_media_links d-none d-lg-block">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-pinterest-p"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sticky-header" class="main-header-area">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3 h-1">
+              <div class="logo ">
+                <a href="index.html">
+                  <h3 style="color: white;">EmpowerED</h3>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-9 col-lg-9">
+              <div class="main-menu">
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="#index">home</a></li>
+                    <li><a data-scroll-nav='1' href="#gets">Get Started</a></li>
+                    <li><a data-scroll-nav='1' href="#bgs4">Become a Volunteer</a></li>
+                    <li><a data-scroll-nav='1' href="#geth">Get Help</a></li>
+                  </ul>
+                </nav>
+                <div class="Appointment">
+                  <div class="book_btn d-none d-lg-block">
+                    <a data-scroll-nav='1' href="/donate">Make a Donate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mobile_menu d-block d-lg-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header-end -->
+
+  <!-- slider_area_start -->
+  <div class="slider_area" style="width: -webkit-fill-available;">
+    <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="slider_text ">
+              <span>Get Started Today.</span>
+              <h3> Help the children
+                When They Need</h3>
+              <p>With so much to consume and such little time, coming up <br>
+                with relevant title ideas is essential</p>
+              <a href="About.html" class="boxed-btn3">Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- slider_area_end -->
+
+  <!-- reson_area_start  -->
+  
+  <div class="reson_area section_padding " id="gets">
+    <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section_title text-center mb-55">
+          <h3><span>Welcome to EmpowerED</span></h3>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <!-- //Start -->
+    <div class="mt-0 about-wrap">
+      <h2 class="mb-4">We Help Thousands of Children to Get Their Education</h2>
+      <p>Welcome to EmpowerED, where compassion meets action and communities unite for a better tomorrow. As an
+        organization deeply committed to making a positive impact, we extend our warmest greetings to all who share our
+        vision of a world where everyone has the opportunity to flourish. With a steadfast dedication to social justice,
+        equality, and sustainable development, we invite you to join us on this journey of empowerment and
+        transformation.</p>
+        <p> Together, let's build a brighter future for generations to come.</p>
+        <div class="row mt-5 g-md-3">
+          <div class="col-md-6 col-lg-4 mb-2 mb-md-0 d-flex align-items-stretch">
+            <a href="#" class="services-2">
+              <div class="icon"><span class="flaticon-donation"></span></div>
+              <div class="text">
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-2 mb-md-0 d-flex align-items-stretch">
+            <a href="#" class="services-2 color-2">
+              <div class="icon"><span class="flaticon-ecosystem"></span></div>
+              <div class="text">
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-2 mb-md-0 d-flex align-items-stretch">
+            <a href="#" class="services-2 color-3">
+              <div class="icon"><span class="flaticon-charity"></span></div>
+              <div class="text">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- end1 -->
+    </div>
+
+    <!-- s2 -->
+    <div class="flex-row" style="display: flex; flex-direction: row; justify-content: space-around;">
+      <div class="card py-4" style="width: 18rem; border-radius: 0; border: 3px solid lightgreen; border-radius: 30px;">
+        <i class="fa-solid fa-hand-holding-dollar card-img-top" alt="Hand Holding Dollar"></i>
+        <div class="card-body">
+          <h5 class="card-title text-center">Start donating</h5>
+        </div>
+      </div>
+      <div class="card py-4" style="width: 18rem; border-radius: 0; border: 3px solid lightgreen; border-radius: 30px">
+        <i class="fa-solid fa-handshake-angle card-img-top" alt="Handshake"></i>
+        <div class="card-body">
+          <h5 class="card-title text-center">Join our Community</h5>
+        </div>
+      </div>
+      <div class="card py-4" style="width: 18rem; border-radius: 0; border: 3px solid lightgreen; border-radius: 30px">
+        <i class="fa-solid fa-hand-holding-hand card-img-top" alt="Hands Holding"></i>
+        <div class="card-body">
+          <h5 class="card-title text-center">Be a volunteer</h5>
+        </div>
+      </div>
+    </div>
+
+
+    <hr>
+    <!--e2  -->
+
+    <!-- reson_area_end  -->
+
+    <!-- latest_activites_area_start  -->
+    <!-- <div class="latest_activites_area"> 
+        <div class="my-5 video_bg_1 video_activite  d-flex align-items-center justify-content-center">
+            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">
+                <i class="flaticon-ui"></i>
+            </a>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="activites_info">
+
+                        <p class="para_1">Every donation made to educate needy individuals is a beacon of hope, illuminating paths to brighter futures. Your generosity not only provides access to knowledge but also ignites possibilities for personal growth and societal advancement. With each contribution, you are not just giving money; you are investing in the empowerment of individuals, the strengthening of communities, and the building of a more equitable world. </p class="para_1">
+                        <p class="para_2">Together, let us sow the seeds of education, nurturing minds and hearts to flourish beyond imagination. Your kindness today paves the way for countless tomorrows filled with promise and opportunity. Thank you for being a champion of education, a beacon of light in the lives of those in need.</p>
+                        <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- s3 -->
+    <!-- counter_area_start  -->
+
+    <!-- counter_area_end  -->
+    <!-- e3-->
+
+
+    <!-- popular_causes_area_start  -->
+    <div class="popular_causes_area section_padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="section_title text-center">
+              <h3 class="mb-5"><span>What We Provide?</span></h3>
+            </div>
+          </div>
+        </div>
+        <main class="page-content" style="color: #ddd;">
+          <div class="d_card">
+            <div class="content" style="color: white;">
+              <h2 class="heading">Education for All</h2>
+              <p class="data-content">Our NGO is dedicated to ensuring that every child has access to quality education,
+                regardless of their socioeconomic background. </p>
+            </div>
+          </div>
+          <div class="d_card">
+            <div class="content">
+              <h2 class="heading">Brighter Futures Initiative</h2>
+              <p class="data-content">Join our NGO in our mission to build brighter futures through education. We
+                provide comprehensive support, including school supplies, tuition assistance, and educational workshops,
+                to children in need</p>
+            </div>
+          </div>
+          <div class="d_card">
+            <div class="content">
+              <h2 class="heading">Pathway to Knowledge</h2>
+              <p class="data-content">At our NGO, we believe that education is the key to unlocking endless
+                opportunities. </p>
+            </div>
+          </div>
+          <div class="d_card">
+            <div class="content">
+              <h2 class="heading">Education Empowerment Project</h2>
+              <p class="data-content">Our NGO's Education Empowerment Project aims to break the cycle of poverty by
+                providing marginalized communities with access to quality education.</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- endofPopular -->
+
+    <div class=" my-5 mb-1 counter_area">
+      <div class="container">
+        <div class="counter_bg overlay">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="single_counter d-flex align-items-center justify-content-center">
+                <div class="icon">
+                  <img src="/images/calendar.png" alt="">
+                </div>
+                <div class="events">
+                  <h3 class="counter">37</h3>
+                  <p>Finished Event</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="single_counter d-flex align-items-center justify-content-center">
+                <div class="icon">
+                  <img src="/images/heartbeat.png" alt="">
+                </div>
+                <div class="events">
+                  <h3 class="counter">255</h3>
+                  <p>Volunteers</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="single_counter d-flex align-items-center justify-content-center">
+                <div class="icon">
+                  <img src="/images/in-love.png" alt="">
+                </div>
+                <div class="events">
+                  <h3 class="counter">11590</h3>
+                  <p>Helped</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="single_counter d-flex align-items-center justify-content-center">
+                <div class="icon">
+                  <img src="/images/hug.png" alt="">
+                </div>
+                <div class="events">
+                  <h3 class="counter">35</h3>
+                  <p>Donators</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- e4 -->
+    <!-- s5 -->
+    <div class="our_volunteer_area section_padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="section_title text-center mb-55">
+              <h3><span>Our Volunteer</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="single_volenteer">
+              <div class="volenteer_thumb h-12 w-16">
+                <img src="/images/image1.jpg" alt="">
+              </div>
+              <div class="voolenteer_info d-flex align-items-end">
+                <div class="social_links">
+                  <ul>
+                    <li>
+                      <a href="#"> <i class="fa fa-facebook"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-pinterest"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-twitter"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info_inner">
+                  <h4>Lyra Bennett</h4>
+                  <p>Donner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single_volenteer">
+              <div class="volenteer_thumb ">
+                <img src="/images/image2.jpg" alt="">
+              </div>
+              <div class="voolenteer_info d-flex align-items-end">
+                <div class="social_links">
+                  <ul>
+                    <li>
+                      <a href="#"> <i class="fa fa-facebook"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-pinterest"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-twitter"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info_inner">
+                  <h4>Olivia Jones</h4>
+                  <p>Volunteer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single_volenteer">
+              <div class="volenteer_thumb">
+                <img src="/images/image3.jpg" alt="">
+              </div>
+              <div class="voolenteer_info d-flex align-items-end">
+                <div class="social_links">
+                  <ul>
+                    <li>
+                      <a href="#"> <i class="fa fa-facebook"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-pinterest"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="fa fa-twitter"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info_inner">
+                  <h4>Sabbir Ahmed</h4>
+                  <p>Volunteer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--e5  -->
+    <!-- s4 -->
+    <section id="bgs4" class="p-5 pb-5 ftco-image img">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 heading-section heading-section-white mb-5 text-center aos-init aos-animate"
+            data-aos="fade-up" data-aos-duration="1000">
+            <span class="subheading">EmpowerED</span>
+            <h2 class="mb-4">The Smallest Act of Kindness is Worth More Than the Grandest Intention</h2>
+            <p><a href="/donate" class="btn btn-primary py-3 px-4"
+                style="background-color: #3CC78F; border: lightgreen;">Donate Now!</a> <a href="/volunteer"
+                class="btn btn-secondary py-3 px-4">Become A Volunteer</a></p>
+          </div>
+        </div>
+      </div>
+      <style>
+        #bgs4 {
+          position: relative;
+          /* Removed absolute positioning */
+          border: 5px solid #ddd;
+          /* Border with width, color, and style */
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          /* Shadow with offset, spread, blur, and color */
+        }
+
+        #bgs4::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url(https://plus.unsplash.com/premium_photo-1697808926712-95879f4d82be?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background-size: cover;
+          z-index: -1;
+          filter: blur(2px);
+        }
+      </style>
+    </section>
+
+    <!-- contact -->
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area breadcam_bg mt-5 overlay d-flex align-items-center justify-content-center" id="geth">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="bradcam_text text-center">
+              <h3>Request Assistance from EmpowerED</h3>
+              <p>Submit a request for assistance to EmpowerED. Provide details about your situation, and our team will
+                review your request and get back to you as soon as possible. We are here to help those in need, and your
+                request will be handled with care and confidentiality.</p>
+              <br>
+              <a href="/help" data-scroll-nav='1' class="boxed-btn4">Get Help</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bradcam_area_end  -->
+
+
+
+  <!-- footer_start  -->
+  <footer id="foot" class="footer">
+    <div class="footer_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-md-6 col-lg-4">
+            <div class="footer_widget">
+
+              <div class="socail_links">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <i class="ti-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="ti-twitter-alt"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-dribbble"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-6 col-lg-2">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Services
+              </h3>
+              <ul class="links">
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Fundraise</a></li>
+                <li><a href="#">Volunteer</a></li>
+                <li><a href="#">Jobs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Contacts
+              </h3>
+              <div class="contacts">
+                <p>+91 9999111999<br>
+                  info@ngoedu.com <br>
+                  Flat 20, Reynolds Neck, North
+                  Helenaville
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Top News
+              </h3>
+              <ul class="news_links">
+                <li>
+                  <div class="thumb">
+                    <a href="#">
+                      <img src="img/news/news_1.png" alt="">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <a href="#">
+                      <h4>School for African
+                        Childrens</h4>
+                    </a>
+                    <span>Jun 12, 2019</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="thumb">
+                    <a href="#">
+                      <img src="img/news/news_2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="info">
+                    <a href="#">
+                      <h4>School for African
+                        Childrens</h4>
+                    </a>
+                    <span>Jun 12, 2019</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer_end  -->
+
+  <!-- link that opens popup -->
+
+  <!-- JS here -->
+  <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="/javascripts/vendor/jquery-1.12.4.min.js"></script>
+  <script src="/javascripts/popper.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/owl.carousel.min.js"></script>
+  <script src="/javascripts/isotope.pkgd.min.js"></script>
+  <script src="/javascripts/ajax-form.js"></script>
+  <script src="/javascripts/waypoints.min.js"></script>
+  <script src="/javascripts/jquery.counterup.min.js"></script>
+  <script src="/javascripts/imagesloaded.pkgd.min.js"></script>
+  <script src="/javascripts/scrollIt.js"></script>
+  <script src="/javascripts/jquery.scrollUp.min.js"></script>
+  <script src="/javascripts/wow.min.js"></script>
+  <script src="/javascripts/nice-select.min.js"></script>
+  <script src="/javascripts/jquery.slicknav.min.js"></script>
+  <script src="/javascripts/jquery.magnific-popup.min.js"></script>
+  <script src="/javascripts/plugins.js"></script>
+  <script src="/javascripts/gijgo.min.js"></script>
+  <script src="/javascripts/contact.js"></script>
+  <script src="/javascripts/jquery.ajaxchimp.min.js"></script>
+  <script src="/javascripts/jquery.form.js"></script>
+  <script src="/javascripts/jquery.validate.min.js"></script>
+  <script src="/javascripts/mail-script.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

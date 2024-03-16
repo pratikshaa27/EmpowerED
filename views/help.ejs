@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #ff7a7a url(https://github.com/annafkt/frontend-mentor-challenges/blob/main/challenges/intro-component-with-signup-form/images/bg-intro-desktop.png?raw=true) no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem 0;
+  font-family: Poppins, sans-serif;
+  color: white;
+  line-height: 1.5rem;
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* No changes needed here */
+
+form input,
+form button,
+form textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
+form .input-container {
+  display: grid;
+  margin-bottom: clamp(0.8rem, 3vw, 1.1rem);
+}
+
+form input {
+  grid-column: 1/span 2;
+  grid-row: 1;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1em 3.5em 1em 1em;
+  border: 1px solid rgba(185, 182, 211, 0.7);
+}
+
+form textarea {
+  grid-column: 1/span 2;
+  grid-row: 1;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1em 3.5em 1em 1em;
+  min-height: 80px; /* Optional: Set a minimum height for the textarea */
+  resize: vertical; /* Allow users to resize the textarea vertically */
+}
+
+/* No changes needed from here onwards */
+
+
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.introduction {
+  flex: 20.6rem;
+  max-width: 31.25rem;
+  align-self: center;
+}
+@media (min-width: 57.2rem) {
+  .introduction {
+    text-align: left;
+  }
+}
+.introduction h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.3em;
+  margin-bottom: 1.5rem;
+}
+
+.form-container {
+  max-width: 29.52875rem;
+}
+
+.price-info {
+  background-color: #6055a5;
+  padding: 1rem min(4.5rem, 13.5vw);
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0.4rem 0.06rem rgba(62, 60, 73, 0.3);
+}
+.price-info b {
+  font-weight: 700;
+}
+
+form {
+  padding: clamp(1rem, 5vw, 2rem);
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.4rem 0.06rem rgba(62, 60, 73, 0.3);
+}
+form input, form button {
+  display: block;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+form .input-container {
+  display: grid;
+  margin-bottom: clamp(0.8rem, 3vw, 1.1rem);
+}
+form input {
+  grid-column: 1/span 2;
+  grid-row: 1;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1em 3.5em 1em 1em;
+  border: 1px solid rgba(185, 182, 211, 0.7);
+}
+form input:hover {
+  background-color: rgba(185, 182, 211, 0.1);
+}
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px rgba(62, 60, 73, 0.5);
+}
+form input.invalid {
+  border: 2px solid #ff7a7a;
+}
+form input.invalid:focus {
+  box-shadow: 0 0 1px 1px #ff7a7a;
+}
+form input.invalid::placeholder {
+  color: #ff7a7a;
+}
+form .icon,
+form .message {
+  display: none;
+}
+form .password-constraint.message,
+form .error.message {
+  display: block;
+  grid-column: 1/span 2;
+  grid-row: 2;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: normal;
+  text-align: right;
+  margin-top: 0.3em;
+  white-space: pre-wrap;
+}
+form .error.icon {
+  display: block;
+  grid-column: 2;
+  grid-row: 1;
+  place-self: center end;
+  margin-right: 1rem;
+}
+form .password-constraint.message {
+  color: #3e3c49;
+}
+form .error.message {
+  color: #ff7a7a;
+  font-style: italic;
+}
+form button {
+  background-color: #38cc8c;
+  color: white;
+  border: transparent;
+  margin-bottom: clamp(0.8rem, 3vw, 1.1rem);
+  padding: 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0.3rem #2fb67c;
+  line-height: 1.1rem;
+}
+form button:hover {
+  background-color: rgba(56, 204, 140, 0.8);
+}
+form button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0.2rem #2fb67c;
+}
+
+.terms-of-service {
+  color: #b9b6d3;
+  font-size: 0.7rem;
+  line-height: 1.7em;
+}
+.terms-of-service a {
+  color: #ff7a7a;
+  text-decoration: none;
+  font-weight: 600;
+}
+.terms-of-service a:hover {
+  color: rgba(255, 122, 122, 0.7);
+}
+
+footer {
+  max-width: 28.6rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 0.3rem 0;
+  border-radius: 0.3rem;
+}
+footer p:first-of-type::after {
+  content: " ";
+  white-space: pre-wrap;
+}
+footer a {
+  color: rgba(62, 60, 73, 0.8);
+  font-weight: 700;
+}
+footer a:hover {
+  color: rgba(62, 60, 73, 0.6);
+}
+footer a:active {
+  color: rgba(62, 60, 73, 0.8);
+}
+    </style>
+</head>
+<body>
+    <!-- See the challenge on Frontend Mentor:
+
+https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1 -->
+
+<section>
+    <div class="introduction">
+      <h2>Request Assistance from EmpowerED</h2>
+      <p>Submit a request for assistance to EmpowerED. Provide details about your situation, and our team will review your request and get back to you as soon as possible. We are here to help those in need, and your request will be handled with care and confidentiality.</p>
+    </div>
+    <div class="form-container">
+      <form action="/helpsubmit" method="post" novalidate>
+        <div class="input-container">
+          <input 
+            type="text" 
+            name="name" 
+            aria-label="Name" 
+            placeholder="Name"
+            pattern="[\p{L},\.\-'\s]*"
+            maxlength="30"
+            required>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="message"></p>
+        </div>
+
+        <div class="input-container">
+          <input
+            type="email" 
+            name="email" 
+            aria-label="Email Address" 
+            placeholder="Email Address"
+            pattern="[\w\.\-\+\/]+@[\w\.\-\+\/]+\.[\w\.\-\+\/]+"
+            maxlength="100"
+            required>
+          <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="message"></p>
+        </div>
+          <div class="input-container">
+            <input 
+              type="number" 
+              name="adharNo" 
+              aria-label="Adhaar No" 
+              placeholder="Adhaar Number"
+              maxlength="12"
+              required>
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+            <p class="message"></p>
+           </div>
+           <div class="input-container">
+            <input 
+              type="text" 
+              name="address" 
+              aria-label="Address" 
+              placeholder="Address"
+              required>
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+            <p class="message"></p>
+           </div>
+           <div class="input-container">
+            <input 
+              type="text" 
+              name="agegrp" 
+              aria-label="Name" 
+              placeholder="Education Age Group"
+              pattern="[\p{L},\.\-'\s]*"
+              maxlength="30"
+              required>
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+            <p class="message"></p>
+          </div>
+           <div class="input-container">
+            <textarea
+              type="text" 
+              name="description" 
+              aria-label="Address" 
+              placeholder="Describe your aid"
+              pattern="[\w\.\-\+\/]+@[\w\.\-\+\/]+\.[\w\.\-\+\/]+"
+              maxlength="100"
+              required></textarea>
+            <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+            <p class="message"></p>
+          </div>
+          
+        <button type="submit">Submit</button>        
+    </form>
+    </div>
+  </section> 
+</body>
+</html>
